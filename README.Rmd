@@ -1,0 +1,42 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# uwebasr2
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of uwebasr2 is to provide access to UWebASR API for audio transcription.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("skvrnami/uwebasr2")
+```
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(uwebasr2)
+```
+
+```{r}
+babis_dopis <- uwebasr_post(lang_model = "CZ", "babis_dopis.mp3")
+babis_dopis
+```

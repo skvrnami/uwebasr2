@@ -6,6 +6,7 @@ user_agent <- c("User-Agent" = "github.com/skvrnami/uwebasr2")
 #' @param lang_model Language of speech recognition model (CZ or SK)
 #' @param path_file Path to file to upload and recognize speech
 #' @param format Format of output
+#' @export
 uwebasr_post <- function(lang_model = "CZ",
                          path_file,
                          format = "plaintext"){
@@ -26,6 +27,7 @@ uwebasr_post <- function(lang_model = "CZ",
 #' @param lang_model Language of speech recognition model (CZ or SK)
 #' @param path_file Path to file to upload and recognize speech
 #' @param format Format of output
+#' @export
 uwebasr_get <- function(lang_model,
                         audio_url,
                         format = "plaintext"){
