@@ -6,8 +6,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of uwebasr2 is to provide access to UWebASR API for audio
-transcription.
+The goal of uwebasr2 is to provide access to
+[UWebASR](https://lindat.mff.cuni.cz/services/uwebasr/) API for audio
+transcription of Czech and Slovak audio files.
 
 ## Installation
 
