@@ -1,5 +1,17 @@
 user_agent <- c("User-Agent" = "github.com/skvrnami/uwebasr2")
 
+#' Handle response other than 200
+#'
+#' @param response Response from the server
+#' @return No return value, called for side effects
+handle_error_response <- function(response){
+    if(response$status_code != 200){
+        msg <- paste("HTTP Error", response$status_code)
+        uwebasr_msg <- stringr::str_conv(response$content, "UTF-8")
+        msg <- paste(msg, "Error message from UWebASR:", uwebasr_msg)
+        usethis::ui_stop(msg)
+    }
+}
 
 #' Post audio file to UWebASR speech recognition engine and retrieve transcription
 #'
@@ -14,6 +26,8 @@ uwebasr_post <- function(lang_model = "CZ",
                httr::add_headers(user_agent),
                body = httr::upload_file(path_file),
                query = list(format = format)) -> out
+
+    handle_error_response(out)
 
     if(format == "json"){
         jsonlite::fromJSON(stringr::str_conv(out$content, "UTF-8"))
@@ -35,6 +49,8 @@ uwebasr_get <- function(lang_model,
               httr::add_headers(user_agent),
               query = list(url = audio_url,
                            format = format)) -> out
+
+    handle_error_response(out)
 
     if(format == "json"){
         jsonlite::fromJSON(stringr::str_conv(out$content, "UTF-8"))
