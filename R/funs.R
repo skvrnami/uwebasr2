@@ -39,7 +39,7 @@ uwebasr_post <- function(lang_model = "CZ",
 #' Get audio transcription from UWebASR speech recognition engine
 #'
 #' @param lang_model Language of speech recognition model (CZ or SK)
-#' @param path_file Path to file to upload and recognize speech
+#' @param audio_url URL to audio file
 #' @param format Format of output
 #' @export
 uwebasr_get <- function(lang_model,

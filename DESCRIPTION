@@ -2,11 +2,20 @@ Package: uwebasr2
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0.9999
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R:
+    person(given = "Michael", 
+            family = "Škvrňák", 
+            email = "michael.skvrnak@protonmail.com", 
+            role = c("aut", "cre"), 
+            comment = c(ORCID = "0000-0003-4647-4095"))
+Description: Access UWebASR API for speech recognition and audio transcription from R.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
+Imports: 
+    glue,
+    httr,
+    jsonlite,
+    stringr,
+    usethis

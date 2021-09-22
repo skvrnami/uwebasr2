@@ -48,7 +48,9 @@ The API also accepts formats `trs`, `extended_trs` and `webvtt`, but the working
 The `uwebasr_post` uploads file from local filesystem to the API and returns the transcription.
 
 ```{r}
+download.file("http://skvrnami.github.io/uwebasr/babis_dopis.mp3", "babis_dopis.mp3")
 babis_dopis <- uwebasr_post(lang_model = "CZ", "babis_dopis.mp3")
+
 cat(babis_dopis)
 ```
 

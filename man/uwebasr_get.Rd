@@ -9,9 +9,9 @@ uwebasr_get(lang_model, audio_url, format = "plaintext")
 \arguments{
 \item{lang_model}{Language of speech recognition model (CZ or SK)}
 
-\item{format}{Format of output}
+\item{audio_url}{URL to audio file}
 
-\item{path_file}{Path to file to upload and recognize speech}
+\item{format}{Format of output}
 }
 \description{
 Get audio transcription from UWebASR speech recognition engine
